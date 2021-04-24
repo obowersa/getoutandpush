@@ -10,7 +10,7 @@ end)
 
 Citizen.CreateThread(function()
     local current_player = Player:new()
-    current_player:stop_anim()
+    --- current_player:stop_anim() Had this in as debug. If the script gets restarted WHILE something is in the animation, they can get stuck. Pulling it out for now
     while true do
         PushVehicle(current_player)
         Citizen.Wait(500)
@@ -38,7 +38,7 @@ function PushVehicle(current_player)
 
                 elseif IsDisabledControlPressed(0, Keys["D"]) then
                     current_vehicle:steer(current_player.ped, "D")
-                    
+
                 end
                 Citizen.Wait(5)
             end
