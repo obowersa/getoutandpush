@@ -38,6 +38,7 @@ function PushVehicle(current_player)
 
                 elseif IsDisabledControlPressed(0, Keys["D"]) then
                     current_vehicle:steer(current_player.ped, "D")
+                    
                 end
                 Citizen.Wait(5)
             end
